@@ -1,0 +1,37 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmgAcquisition_Filter_Altalena"
+        xmlns:myWpfChartUC="clr-namespace:myWpfChartUC;assembly=myWpfChartUC" x:Name="myWindow" x:Class="EmgAcquisition_Filter_Altalena.MainWindow"
+        mc:Ignorable="d"
+        Title="EmgAcquisition @ 500Hz" Height="651.893" Width="678.2" WindowState="Maximized">
+    <Grid>
+        <Label x:Name="myLabel" Content="" HorizontalAlignment="Left" Height="58" Margin="4,8,0,0" VerticalAlignment="Top" Width="164" FontSize="16" FontWeight="Bold" BorderBrush="Black" BorderThickness="1"/>
+        <ComboBox x:Name="emgUpComboBox" Margin="4,114,0,0" Loaded="emgUpComboBox_Loaded" HorizontalAlignment="Left" Width="164" Height="30" VerticalAlignment="Top" SelectionChanged="emgUpComboBox_SelectionChanged" FontSize="16" FontWeight="Bold"/>
+        <ComboBox x:Name="emgDownComboBox" Margin="4,173,0,0" Loaded="emgDownComboBox_Loaded" HorizontalAlignment="Left" Width="164" Height="30" VerticalAlignment="Top" SelectionChanged="emgDownComboBox_SelectionChanged" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="ConfigurationButton" Content="CONFIGURE" HorizontalAlignment="Left" Margin="4,236,0,0" Width="164" Click="ConfigurationButton_Click" Height="30" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="StartCaptureButton" Content="START" Margin="4,290,0,0" Click="StartCaptureButton_Click" HorizontalAlignment="Left" Width="164" Height="30" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="StopCaptureButton" Content="STOP" Margin="4,401,0,0" HorizontalAlignment="Left" Width="164" Height="30" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Click="StopCaptureButton_Click"/>
+        <Button x:Name="RestartCaptureButton" Content="RESTART" Margin="4,455,0,0" HorizontalAlignment="Left" Width="164" Height="30" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Click="RestartCaptureButton_Click"/>
+        <TabControl Margin="199,10,10,10.4">
+            <TabItem x:Name="AnimationTimeItem" Header="ANIMATION" FontWeight="Bold">
+                <Grid Background="#c3c3c3">
+                    <Image x:Name="baseAltalenaImg" Margin="152,266,152.4,20.6" Width="154" Height="287" Source="BaseAltalena.png"/>
+                    <Image x:Name="barraAltalenaImg" Margin="49,244,49.4,279.6" Width="360" Height="50" Source="BarraAltalena.png" RenderTransformOrigin="0.5,0.5"/>
+                    <TextBox x:Name="upRmsTextBox_Copy" Margin="0,10,10.6,0" TextWrapping="Wrap" Text="UpRms" FontWeight="Bold" FontSize="16" BorderBrush="{x:Null}" IsReadOnly="True" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100"/>
+                    <TextBox x:Name="downRmsTextBox_Copy" Margin="10,10,0,0" TextWrapping="Wrap" Text="DownRms" FontWeight="Bold" FontSize="16" BorderBrush="{x:Null}" IsReadOnly="True" HorizontalAlignment="Left" Width="100" Height="60" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="plotTabItem" Header="PLOT" FontWeight="Bold">
+                <Grid Background="#FFE5E5E5">
+                    <myWpfChartUC:myWpfChartUC x:Name="graficoEmgUp" Margin="10,10,10.4,383.6" BorderThickness="1" BorderBrush="Black"/>
+                    <myWpfChartUC:myWpfChartUC x:Name="graficoEmgDown" Margin="10,384,10.2,9.6" BorderThickness="1" BorderBrush="Black"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="RestEmgButton" Content="REST EMG" Margin="4,345,0,0" Click="RestEmgButton_Click" HorizontalAlignment="Left" Width="164" Height="30" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

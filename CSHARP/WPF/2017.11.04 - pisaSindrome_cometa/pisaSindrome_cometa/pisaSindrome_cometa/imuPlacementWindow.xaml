@@ -1,0 +1,98 @@
+﻿<Window x:Class="pisaSindrome_cometa.imuPlacementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pisaSindrome_cometa"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="IMU SELECTION" Height="308.8" Width="525">
+    <Grid>
+        <Label x:Name="label" Content="IMU #" HorizontalAlignment="Left" Height="26" Margin="127,34,0,0" VerticalAlignment="Top" Width="44"/>
+        <Label x:Name="label_Copy" Content="IMU #" HorizontalAlignment="Left" Height="26" Margin="429,34,0,0" VerticalAlignment="Top" Width="44"/>
+        <Label x:Name="label_Copy1" Content="IMU #" HorizontalAlignment="Left" Height="26" Margin="127,118,0,0" VerticalAlignment="Top" Width="44"/>
+        <Label x:Name="label_Copy2" Content="IMU #" HorizontalAlignment="Left" Height="26" Margin="429,120,0,0" VerticalAlignment="Top" Width="44"/>
+        <Label x:Name="trunkLabel" Content="TRUNK" HorizontalAlignment="Left" Height="26" Margin="29,60,0,0" VerticalAlignment="Top" Width="56" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="pelvisLabel" Content="PELVIS" HorizontalAlignment="Left" Height="26" Margin="335,60,0,0" VerticalAlignment="Top" Width="69" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="thighLabel" Content="THIGH" HorizontalAlignment="Left" Height="26" Margin="32,149,0,0" VerticalAlignment="Top" Width="53" FontSize="13.333" FontWeight="Bold"/>
+        <Label x:Name="shankLabel" Content="SHANK" HorizontalAlignment="Left" Height="26" Margin="332,147,0,0" VerticalAlignment="Top" Width="58" FontSize="13.333" FontWeight="Bold"/>
+        <ComboBox x:Name="trunkComboBox" HorizontalAlignment="Left" Height="26" Margin="97,60,0,0" VerticalAlignment="Top" Width="74">
+            <System:String>NONE</System:String>
+            <System:String>1</System:String>
+            <System:String>2</System:String>
+            <System:String>3</System:String>
+            <System:String>4</System:String>
+            <System:String>5</System:String>
+            <System:String>6</System:String>
+            <System:String>7</System:String>
+            <System:String>8</System:String>
+            <System:String>9</System:String>
+            <System:String>10</System:String>
+            <System:String>11</System:String>
+            <System:String>12</System:String>
+            <System:String>13</System:String>
+            <System:String>14</System:String>
+            <System:String>15</System:String>
+            <System:String>16</System:String>
+        </ComboBox>
+        <ComboBox x:Name="pelvisComboBox" HorizontalAlignment="Left" Height="26" Margin="397,60,0,0" VerticalAlignment="Top" Width="74">
+            <System:String>NONE</System:String>
+            <System:String>1</System:String>
+            <System:String>2</System:String>
+            <System:String>3</System:String>
+            <System:String>4</System:String>
+            <System:String>5</System:String>
+            <System:String>6</System:String>
+            <System:String>7</System:String>
+            <System:String>8</System:String>
+            <System:String>9</System:String>
+            <System:String>10</System:String>
+            <System:String>11</System:String>
+            <System:String>12</System:String>
+            <System:String>13</System:String>
+            <System:String>14</System:String>
+            <System:String>15</System:String>
+            <System:String>16</System:String>
+        </ComboBox>
+        <ComboBox x:Name="thighComboBox" HorizontalAlignment="Left" Height="26" Margin="97,149,0,0" VerticalAlignment="Top" Width="74">
+            <System:String>NONE</System:String>
+            <System:String>1</System:String>
+            <System:String>2</System:String>
+            <System:String>3</System:String>
+            <System:String>4</System:String>
+            <System:String>5</System:String>
+            <System:String>6</System:String>
+            <System:String>7</System:String>
+            <System:String>8</System:String>
+            <System:String>9</System:String>
+            <System:String>10</System:String>
+            <System:String>11</System:String>
+            <System:String>12</System:String>
+            <System:String>13</System:String>
+            <System:String>14</System:String>
+            <System:String>15</System:String>
+            <System:String>16</System:String>
+        </ComboBox>
+        <ComboBox x:Name="shankComboBox" HorizontalAlignment="Left" Height="26" Margin="399,147,0,0" VerticalAlignment="Top" Width="74">
+            <System:String>NONE</System:String>
+            <System:String>1</System:String>
+            <System:String>2</System:String>
+            <System:String>3</System:String>
+            <System:String>4</System:String>
+            <System:String>5</System:String>
+            <System:String>6</System:String>
+            <System:String>7</System:String>
+            <System:String>8</System:String>
+            <System:String>9</System:String>
+            <System:String>10</System:String>
+            <System:String>11</System:String>
+            <System:String>12</System:String>
+            <System:String>13</System:String>
+            <System:String>14</System:String>
+            <System:String>15</System:String>
+            <System:String>16</System:String>
+        </ComboBox>
+        <Button x:Name="confirmButton" Content="CONFIRM" HorizontalAlignment="Left" Height="37" Margin="47,219,0,0" VerticalAlignment="Top" Width="123" FontWeight="Bold" FontSize="14.667" Click="confirmButton_Click"/>
+        <Button x:Name="createAdfFileButton" Content="CREATE ADF FILE" HorizontalAlignment="Left" Height="37" Margin="348,219,0,0" VerticalAlignment="Top" Width="123" FontWeight="Bold" FontSize="14.667" Click="createAdfFileButton_Click"/>
+    </Grid>
+</Window>

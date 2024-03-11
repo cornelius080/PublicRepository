@@ -1,0 +1,48 @@
+﻿<Window x:Class="NPREth_GetSetConfiguration.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NPREth_GetSetConfiguration"
+        mc:Ignorable="d"
+        Title="NPREth NET CONFIGURATION" Height="514" Width="882" WindowState="Maximized">
+    <Grid>
+        <GroupBox x:Name="GetConfigurationGroupBox" Header="GET CONFIGURATION" Margin="301,0,0,0" Padding="10" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Width="274" Height="452" VerticalAlignment="Center">
+            <StackPanel x:Name="GetConfigurationStackPanel">
+                <TextBlock Margin="0,10" FontSize="16" Text="IP Address"/>
+                <TextBox x:Name="ipAddressGetConfig"/>
+                <TextBlock Margin="0,10" FontSize="16" Text="MAC Address"/>
+                <TextBox x:Name="macAddressGetConfig" IsReadOnly="True" IsEnabled="False"/>
+                <TextBlock Margin="0,10" FontSize="16" Text="GW Address"/>
+                <TextBox x:Name="gwAddressGetConfig" IsReadOnly="True" IsEnabled="False"/>
+                <TextBlock Margin="0,10" FontSize="16" Text="Subnet Mask"/>
+                <TextBox x:Name="subMaskGetConfig" IsReadOnly="True" IsEnabled="False"/>
+                <Button x:Name="ConnectButton" Margin="0,20" Content="CONNECT" Click="ConnectButton_Click"/>
+                <Button x:Name="DisconnectButton" Content="DISCONNECT" Click="DisconnectButton_Click" IsEnabled="False"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="SetConfigurationGroupBox" Header="SET CONFIGURATION" Margin="597,0,0,0" Padding="10" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Width="274" Height="452" VerticalAlignment="Center">
+            <StackPanel x:Name="SetConfigurationStackPanel">
+                <TextBlock Margin="0,10" FontSize="16" Text="IP Address"/>
+                <TextBox x:Name="ipAddressSetConfig" IsEnabled="False"/>
+                <TextBlock Margin="0,10" FontSize="16" Text="MAC Address"/>
+                <TextBox x:Name="macAddressSetConfig" IsEnabled="False"/>
+                <TextBlock Margin="0,10" FontSize="16" Text="GW Address"/>
+                <TextBox x:Name="gwAddressSetConfig" IsEnabled="False"/>
+                <TextBlock Margin="0,10" FontSize="16" Text="Subnet Mask"/>
+                <TextBox x:Name="subMaskSetConfig" IsEnabled="False"/>
+                <Button x:Name="SetConfigurationButton" Margin="0,20" Content="SET" Click="SetConfigurationButton_Click" IsEnabled="False"/>
+                <Button x:Name="SetDefaultConfigurationButton" Content="SET DEFAULT" Click="SetDefaultConfigurationButton_Click" IsEnabled="False"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="ExtraParametersGroupBox" Header="HW FW PARAMETERS" Margin="15,0,0,0" Padding="10" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Width="274" Height="452" VerticalAlignment="Center">
+            <StackPanel x:Name="ExtraParametersStackPanel">
+                <TextBlock Margin="0,10" FontSize="16" Text="Type"/>
+                <TextBox x:Name="typeTextBox" IsEnabled="False" IsReadOnly="True"/>
+                <TextBlock Margin="0,10" FontSize="16" Text="Rev"/>
+                <TextBox x:Name="revTextBox" IsReadOnly="True" IsEnabled="False"/>
+            </StackPanel>
+        </GroupBox>
+
+    </Grid>
+</Window>

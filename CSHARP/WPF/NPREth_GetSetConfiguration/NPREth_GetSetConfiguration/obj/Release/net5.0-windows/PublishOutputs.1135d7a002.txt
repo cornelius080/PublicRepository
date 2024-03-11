@@ -1,0 +1,5 @@
+C:\Users\Nical\Desktop\NPREth_GetSetConfiguration\NPREth_GetSetConfiguration\bin\Release\net5.0-windows\publish\NPREth_GetSetConfiguration.exe
+C:\Users\Nical\Desktop\NPREth_GetSetConfiguration\NPREth_GetSetConfiguration\bin\Release\net5.0-windows\publish\NPREth_GetSetConfiguration.dll
+C:\Users\Nical\Desktop\NPREth_GetSetConfiguration\NPREth_GetSetConfiguration\bin\Release\net5.0-windows\publish\NPREth_GetSetConfiguration.deps.json
+C:\Users\Nical\Desktop\NPREth_GetSetConfiguration\NPREth_GetSetConfiguration\bin\Release\net5.0-windows\publish\NPREth_GetSetConfiguration.runtimeconfig.json
+C:\Users\Nical\Desktop\NPREth_GetSetConfiguration\NPREth_GetSetConfiguration\bin\Release\net5.0-windows\publish\NPREth_GetSetConfiguration.pdb

@@ -1,0 +1,17 @@
+D:\DON_GNOCCHI\PROGRAMMAZIONE\MYDLL\eljambaLibrary\eljambaLibrary\bin\Debug\eljambaLibrary.dll
+D:\DON_GNOCCHI\PROGRAMMAZIONE\MYDLL\eljambaLibrary\eljambaLibrary\bin\Debug\eljambaLibrary.pdb
+D:\DON_GNOCCHI\PROGRAMMAZIONE\MYDLL\eljambaLibrary\eljambaLibrary\obj\Debug\eljambaLibrary.csprojResolveAssemblyReference.cache
+D:\DON_GNOCCHI\PROGRAMMAZIONE\MYDLL\eljambaLibrary\eljambaLibrary\obj\Debug\eljambaLibrary.dll
+D:\DON_GNOCCHI\PROGRAMMAZIONE\MYDLL\eljambaLibrary\eljambaLibrary\obj\Debug\eljambaLibrary.pdb
+C:\Users\Administrator\Desktop\DON_GNOCCHI\PROGRAMMAZIONE\MYDLL\eljambaLibrary\eljambaLibrary\bin\Debug\eljambaLibrary.dll
+C:\Users\Administrator\Desktop\DON_GNOCCHI\PROGRAMMAZIONE\MYDLL\eljambaLibrary\eljambaLibrary\bin\Debug\eljambaLibrary.pdb
+C:\Users\Administrator\Desktop\DON_GNOCCHI\PROGRAMMAZIONE\MYDLL\eljambaLibrary\eljambaLibrary\obj\Debug\eljambaLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\DON_GNOCCHI\PROGRAMMAZIONE\MYDLL\eljambaLibrary\eljambaLibrary\obj\Debug\eljambaLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\DON_GNOCCHI\PROGRAMMAZIONE\MYDLL\eljambaLibrary\eljambaLibrary\obj\Debug\eljambaLibrary.dll
+C:\Users\Administrator\Desktop\DON_GNOCCHI\PROGRAMMAZIONE\MYDLL\eljambaLibrary\eljambaLibrary\obj\Debug\eljambaLibrary.pdb
+C:\Users\Administrator\Desktop\DON_GNOCCHI\PROGRAMMAZIONE\C#\myDLL\eljambaLibrary\eljambaLibrary\bin\Debug\eljambaLibrary.dll
+C:\Users\Administrator\Desktop\DON_GNOCCHI\PROGRAMMAZIONE\C#\myDLL\eljambaLibrary\eljambaLibrary\bin\Debug\eljambaLibrary.pdb
+C:\Users\Administrator\Desktop\DON_GNOCCHI\PROGRAMMAZIONE\C#\myDLL\eljambaLibrary\eljambaLibrary\obj\Debug\eljambaLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\DON_GNOCCHI\PROGRAMMAZIONE\C#\myDLL\eljambaLibrary\eljambaLibrary\obj\Debug\eljambaLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\DON_GNOCCHI\PROGRAMMAZIONE\C#\myDLL\eljambaLibrary\eljambaLibrary\obj\Debug\eljambaLibrary.dll
+C:\Users\Administrator\Desktop\DON_GNOCCHI\PROGRAMMAZIONE\C#\myDLL\eljambaLibrary\eljambaLibrary\obj\Debug\eljambaLibrary.pdb

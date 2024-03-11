@@ -1,0 +1,84 @@
+﻿<Window x:Class="ConvBinOptionsUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConvBinOptionsUI"
+        mc:Ignorable="d"
+        Title="ConvBinOptionsUI" Height="768" Width="1012">
+    <Grid>
+        <GroupBox x:Name="GroupBox_ResultsFolder" Header="Results Folder Location" Margin="10,10,10,452" FontSize="14">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="RadioButton_InputFolder" Content="Input File Folder" IsChecked="True" Checked="RadioButton_InputFolder_Checked"/>
+                    <RadioButton x:Name="RadioButton_SelectedFolder" Content="Selected Folder" Checked="RadioButton_SelectedFolder_Checked" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="TextBox_SelectedFolder" IsEnabled="False" Width="600"/>
+                    <Button x:Name="Button_Browse" Content="..." IsEnabled="False" Width="30" Margin="20,0,0,0" Click="Button_Browse_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="GroupBox_LogsDuration" Header="Logs Duration" Margin="10,120,10,245" FontSize="14">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <CheckBox x:Name="CheckBox_StartTime" Content="From" Checked="CheckBox_StartTime_Checked" Unchecked="CheckBox_StartTime_Unchecked"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="TextBox_StartTime1" IsEnabled="False" Text="YYYY.MM.DD" Width="90" Height="21" ToolTip="YYYY.MM.DD"/>
+                            <TextBox x:Name="TextBox_StartTime2" IsEnabled="False" Text="hh:mm:ss" Width="90" Height="21" ToolTip="hh:mm:ss"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <CheckBox x:Name="CheckBox_StopTime" Content="To" Unchecked="CheckBox_StopTime_Unchecked" Checked="CheckBox_StopTime_Checked"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="TextBox_StopTime1" IsEnabled="False" Text="YYYY.MM.DD" Width="90" Height="21" ToolTip="YYYY.MM.DD"/>
+                            <TextBox x:Name="TextBox_StopTime2" IsEnabled="False" Text="hh:mm:ss" Width="90" Height="21" ToolTip="hh:mm:ss"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <CheckBox x:Name="CheckBox_Interval" Content="Interval" Checked="CheckBox_Interval_Checked" Unchecked="CheckBox_Interval_Unchecked"/>
+                        <ComboBox x:Name="ComboBox_Interval" IsEnabled="False" SelectionChanged="ComboBox_Interval_SelectionChanged">
+                            <ComboBoxItem Content="10 s"/>
+                            <ComboBoxItem Content="20 s"/>
+                            <ComboBoxItem Content="30 s"/>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+                    <CheckBox x:Name="CheckBox_TimeRounding" Content="Time rounding (required for OPUS and other third-party services)"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="GroupBox_RinexVersion" Header="RINEX Version" Margin="10,323,10,182" FontSize="14">
+            <StackPanel>
+                <ComboBox x:Name="ComboBox_RinexVersion" Height="25" SelectionChanged="ComboBox_RinexVersion_SelectionChanged">
+                    <ComboBoxItem Content="RINEX 3.02"/>
+                    <ComboBoxItem Content="RINEX 2.10"/>
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="GroupBox_MarkerName" Header="Marker Name" Margin="10,403,10,237" FontSize="14">
+            <StackPanel>
+                <TextBox x:Name="TextBox_MarkerName" IsEnabled="False" Text="For static data"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="GroupBox_Satellites" Header="Satellites" Margin="10,533,10,-17" FontSize="14">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox x:Name="CheckBox_Satellites_Gps" Content="GPS" IsChecked="True"/>
+                    <CheckBox x:Name="CheckBox_Satellites_Sbas" Content="SBAS" IsChecked="False"/>
+                    <CheckBox x:Name="CheckBox_Satellites_Glonass" Content="GLONASS" IsChecked="True"/>
+                    <CheckBox x:Name="CheckBox_Satellites_Galileo" Content="Galileo" IsChecked="True"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox x:Name="CheckBox_Satellites_Qzss" Content="QZSS" IsChecked="False"/>
+                    <CheckBox x:Name="CheckBox_Satellites_Beidou" Content="BeiDou" IsChecked="True"/>
+                    <CheckBox x:Name="CheckBox_Satellites_Irnss" Content="IRNSS" IsChecked="False"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+
+    </Grid>
+</Window>

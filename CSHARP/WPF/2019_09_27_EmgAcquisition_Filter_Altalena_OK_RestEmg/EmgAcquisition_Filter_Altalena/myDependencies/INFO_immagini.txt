@@ -1,0 +1,13 @@
+TRIANGOLO - BASE
+h = 287;
+semibase = 77;
+
+alfa = tand(h  / semibase);
+alfa = 75;
+
+
+RETTANGOLO - ALTALENA
+semibase = hTriangolo / sen(alfaMax);
+alfaMax = 70;
+
+semibase = 305.42;

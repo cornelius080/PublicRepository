@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "NPREth_GetSetConfiguration/1.0.0": {
+        "runtime": {
+          "NPREth_GetSetConfiguration.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NPREth_GetSetConfiguration/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
