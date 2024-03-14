@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_2022_10_12___RTKLibConvBin.MainPage"
+             xmlns:MauiLib_CustomControls = "clr-namespace:MauiLib_CustomControls;assembly=MauiLib_CustomControls"
+             Title="RTKLib_ConvBin_UI">
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+              ColumnDefinitions="*, 5*"
+              Padding="40">
+
+            
+            <!--#region UBX FILE SELECTION-->
+            <Button 
+                    x:Name="Button_OpenFile" 
+                    Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    IsEnabled="True" 
+                    BackgroundColor="Silver" 
+                    Text="OPEN UBX FILE" 
+                    TextColor="White" 
+                    Clicked="Button_OpenFile_Clicked"/>
+            <!--#endregion-->
+
+
+            <!--#region RESULTS FOLDER LOCATION-->
+            <Label 
+                Grid.Column="0"
+                Grid.Row="1"   
+                Grid.RowSpan="2"
+                Margin="0, 30, 0, 0"
+                Text="Results folder location" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"/>
+
+            <HorizontalStackLayout Grid.Row="1" Grid.Column="1" Margin="0, 30, 0, 0">
+                <RadioButton 
+                    x:Name="RadioButton_InputFolder" 
+                    Content="Input File Folder"  
+                    CheckedChanged="RadioButton_InputFolder_CheckedChanged"
+                    IsChecked="True"/>
+                <RadioButton 
+                    x:Name="RadioButton_SelectedFolder" 
+                    Content="Selected Folder" 
+                    CheckedChanged="RadioButton_SelectedFolder_CheckedChanged"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Grid.Row="2" Grid.Column="1">
+                <Entry 
+                    IsEnabled="False" 
+                    IsReadOnly="True" 
+                    Background="silver" 
+                    Placeholder="FILE PATH" 
+                    Keyboard="Url"/>
+                <Button 
+                    x:Name="Button_Browse" 
+                    Margin="10,0,0,0" 
+                    IsEnabled="False" 
+                    BackgroundColor="Silver" 
+                    Text="..." 
+                    TextColor="White" 
+                    Clicked="Button_Browse_Click"/>
+            </HorizontalStackLayout>
+            <!--#endregion-->
+
+
+            <!--#region LOGS DURATION-->
+            <Label 
+                Grid.Column="0"
+                Grid.Row="3" 
+                Grid.RowSpan="3"  
+                Margin="0, 30, 0, 0"
+                Text="Logs duration" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"/>
+
+            <HorizontalStackLayout Grid.Row="3" Grid.Column="1" Margin="0,30,0,0">
+                <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_StartTime"/>
+                <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_StopTime" Margin="225,0,0,0"/>
+                <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_Interval" Margin="245,0,0,0"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Grid.Row="4" Grid.Column="1">
+                <Entry 
+                    x:Name="Entry_StartTime1" 
+                    IsEnabled="False" 
+                    Placeholder="YYYY/MM/DD" 
+                    WidthRequest="120"  
+                    TextChanged="Entry_StartTime1_TextChanged"/>
+                <Entry 
+                    x:Name="Entry_StartTime2" 
+                    IsEnabled="False" 
+                    Placeholder="hh:mm:ss" 
+                    Margin="10,0,0,0" 
+                    WidthRequest="120" 
+                    TextChanged="Entry_StartTime2_TextChanged"/>
+                <Entry 
+                    x:Name="Entry_StopTime1" 
+                    IsEnabled="False" 
+                    Placeholder="YYYY/MM/DD" 
+                    Margin="50,0,0,0" 
+                    WidthRequest="120" 
+                    TextChanged="Entry_StopTime1_TextChanged"/>
+                <Entry 
+                    x:Name="Entry_StopTime2" 
+                    IsEnabled="False" 
+                    Placeholder="hh:mm:ss" 
+                    Margin="10,0,0,0" 
+                    WidthRequest="120" 
+                    TextChanged="Entry_StopTime2_TextChanged"/>
+                <Picker x:Name="Picker_Interval"
+                        Title=""
+                        Margin="50,0,0,0" 
+                        IsEnabled="False"
+                        SelectedIndexChanged="Picker_Interval_SelectedIndexChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>0</x:String>
+                            <x:String>0.05</x:String>
+                            <x:String>0.1</x:String>
+                            <x:String>0.2</x:String>
+                            <x:String>0.25</x:String>
+                            <x:String>0.5</x:String>
+                            <x:String>1</x:String>
+                            <x:String>5</x:String>
+                            <x:String>10</x:String>
+                            <x:String>15</x:String>
+                            <x:String>30</x:String>
+                            <x:String>60</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_TimeRounding" Grid.Row="5" Grid.Column="1"/>
+            <!--#endregion-->
+
+
+            <!--#region RINEX VERSION-->
+            <Label 
+                Grid.Column="0" 
+                Grid.Row="6" 
+                Grid.RowSpan="1" 
+                Margin="0, 30, 0, 0"
+                Text="RINEX version" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"/>
+
+            <Picker x:Name="Picker_RinexVersion"
+                    Title=""
+                    Grid.Column="1" 
+                    Grid.Row="6"
+                    Margin="0, 30, 0, 0"
+                    SelectedIndexChanged="Picker_RinexVersion_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>3.02</x:String>
+                        <x:String>2.10</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <!--#endregion-->
+
+
+            <!--#region MARKER NAME-->
+            <Label 
+                Grid.Column="0"  
+                Grid.Row="7" 
+                Grid.RowSpan="1"
+                Margin="0, 30, 0, 0"
+                Text="Marker name" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"/>
+
+            <Entry 
+                x:Name="Entry_MarkerName"
+                Grid.Row="7"
+                Grid.Column="1"
+                Margin="0, 30, 0, 0"
+                Placeholder="Marker Name"
+                Background="silver" 
+                TextChanged="Entry_MarkerName_TextChanged"/>
+            <!--#endregion-->
+
+
+            <!--#region SATELLITES-->
+            <Label 
+                Grid.Column="0" 
+                Grid.Row="8" 
+                Grid.RowSpan="2"
+                Margin="0, 30, 0, 0"
+                Text="Satellites" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"/>
+
+            <HorizontalStackLayout Grid.Row="8" Grid.Column="1" Margin="0,30,0,0">
+                <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_Satellites_Gps"/>
+                <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_Satellites_Glonass" Margin="20,0,0,0"/>
+                <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_Satellites_Galileo" Margin="20,0,0,0"/>
+                <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_Satellites_BeiDou" Margin="20,0,0,0"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Grid.Row="9" Grid.Column="1">
+                <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_Satellites_Sbas"/>
+                <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_Satellites_Qzss" Margin="20,0,0,0"/>
+                <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_Satellites_Irnss" Margin="20,0,0,0"/>
+            </HorizontalStackLayout>
+            <!--#endregion-->
+
+
+            <!--#region CONVERSION-->
+            <Button 
+                    x:Name="Button_Convert" 
+                    Grid.Row="10"
+                    Grid.ColumnSpan="2"
+                    IsEnabled="False" 
+                    Margin="0, 30, 0, 0"
+                    BackgroundColor="Silver" 
+                    Text="CONVERT" 
+                    TextColor="White" 
+                    Clicked="Button_Convert_Clicked"/>
+            <!--#endregion-->
+
+        </Grid>
+
+    </ScrollView>
+</ContentPage>

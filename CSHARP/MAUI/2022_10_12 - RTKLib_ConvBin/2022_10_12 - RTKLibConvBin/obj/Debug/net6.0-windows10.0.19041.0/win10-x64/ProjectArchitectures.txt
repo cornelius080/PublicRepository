@@ -1,0 +1,1 @@
+C:\Users\gscalera\Desktop\REMOT\SOFTWARE_DEVELOPMENT\CSHARP\MAUI\2022_10_12 - RTKLib_ConvBin\2022_10_12 - RTKLibConvBin\2022_10_12 - RTKLibConvBin.csproj;x64

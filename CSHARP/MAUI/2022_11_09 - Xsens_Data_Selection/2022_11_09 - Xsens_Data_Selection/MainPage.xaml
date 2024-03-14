@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_2022_11_09___Xsens_Data_Selection.MainPage"
+             xmlns:MauiLib_CustomControls = "clr-namespace:MauiLib_CustomControls;assembly=MauiLib_CustomControls"
+             Title="XSENS Mti 7 - Device Settings">
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+              ColumnDefinitions="*, *, *, *, *, *, *"
+              Padding="40">
+
+            <!--#region TIMESTAMP-->
+            <Label 
+                Grid.Column="0"
+                Grid.Row="0"   
+                Grid.RowSpan="1"
+                Margin="0, 30, 0, 0"
+                Text="TIMESTAMP" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"
+                WidthRequest="120"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_PacketCounter" Grid.Row="0" Grid.Column="1" Margin="0, 30, 0, 0"/>
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_SampleTimeFine" Grid.Row="0" Grid.Column="2" Margin="0, 30, 0, 0"/>
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_SampleTimeCoarse" Grid.Row="0" Grid.Column="3" Margin="0, 30, 0, 0"/>
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_UTCTime" Grid.Row="0" Grid.Column="4" Margin="0, 30, 0, 0"/>
+            <!--#endregion-->
+            
+
+            <!--#region ORIENTATION-->
+            <Label 
+                Grid.Column="0"
+                Grid.Row="1"   
+                Grid.RowSpan="1"
+                Margin="0, 40, 0, 0"
+                Text="ORIENTATION" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"
+                WidthRequest="120"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+
+            <Picker x:Name="Picker_Orientation"
+                    Title=""
+                    Grid.Column="1" 
+                    Grid.Row="1"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_Orientation_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>QUATERNION</x:String>
+                        <x:String>EULER ANGLES</x:String>
+                        <x:String>ROTATION MATRIX</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker x:Name="Picker_Orientation_Precision"
+                    Title=""
+                    Grid.Column="5" 
+                    Grid.Row="1"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_Orientation_Precision_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Floating Point 32-bit</x:String>
+                        <x:String>Floating Point 64-bit</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker x:Name="Picker_Orientation_Frequency"
+                    Title=""
+                    Grid.Column="6" 
+                    Grid.Row="1"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_Orientation_Frequency_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>100 Hz</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <!--#endregion-->
+
+
+            <!--#region INERTIAL DATA-->
+            <Label 
+                Grid.Column="0"
+                Grid.Row="2"   
+                Grid.RowSpan="1"
+                Margin="0, 40, 0, 0"
+                Text="INERTIAL DATA" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"
+                WidthRequest="120"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_RateTurn" Grid.Row="2" Grid.Column="1" Margin="0, 40, 0, 0"/>
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_Acceleration" Grid.Row="2" Grid.Column="2" Margin="0, 40, 0, 0"/>
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_FreeAcceleration"  Grid.Row="2" Grid.Column="3" Margin="0, 40, 0, 0"/>
+
+            <Picker x:Name="Picker_InertialData_Precision"
+                    Title=""
+                    Grid.Column="5" 
+                    Grid.Row="2"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_InertialData_Precision_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Floating Point 32-bit</x:String>
+                        <x:String>Floating Point 64-bit</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker x:Name="Picker_InertialData_Frequency"
+                    Title=""
+                    Grid.Column="6" 
+                    Grid.Row="2"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_InertialData_Frequency_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>100 Hz</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <!--#endregion-->
+
+
+            <!--#region MAGNETIC FIELD-->
+            <Label 
+                Grid.Column="0"
+                Grid.Row="3"   
+                Grid.RowSpan="1"
+                Margin="0, 40, 0, 0"
+                Text="MAGNETIC FIELD" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"
+                WidthRequest="120"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_MagneticField" Grid.Row="3" Grid.Column="1" Margin="0, 40, 0, 0"/>
+
+            <Picker x:Name="Picker_MagneticField_Precision"
+                    Title=""
+                    Grid.Column="5" 
+                    Grid.Row="3"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_MagneticField_Precision_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Floating Point 32-bit</x:String>
+                        <x:String>Floating Point 64-bit</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker x:Name="Picker_MagneticField_Frequency"
+                    Title=""
+                    Grid.Column="6" 
+                    Grid.Row="3"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_MagneticField_Frequency_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>100 Hz</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <!--#endregion-->
+
+
+            <!--#region HIGH RATE DATA-->
+            <Label 
+                Grid.Column="0"
+                Grid.Row="4"   
+                Grid.RowSpan="1"
+                Margin="0, 40, 0, 0"
+                Text="HIGH-RATE DATA" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"
+                WidthRequest="120"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+ 
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_AccelerationHR" Grid.Row="4" Grid.Column="1" Margin="0,40,0,0"/>
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_RateTurnHR" Grid.Row="4" Grid.Column="2" Margin="0,40,0,0"/>
+
+            <Picker x:Name="Picker_HighRate_Precision"
+                    Title=""
+                    Grid.Column="5" 
+                    Grid.Row="4"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_HighRate_Precision_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Floating Point 32-bit</x:String>
+                        <x:String>Floating Point 64-bit</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker x:Name="Picker_HighRate_Frequency"
+                    Title=""
+                    Grid.Column="6" 
+                    Grid.Row="4"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_HighRate_Frequency_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>200 Hz</x:String>
+                        <x:String>500 Hz</x:String>
+                        <x:String>1000 Hz</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <!--#endregion-->
+
+
+            <!--#region TEMPERATURE-->
+            <Label 
+                Grid.Column="0"
+                Grid.Row="5"   
+                Grid.RowSpan="1"
+                Margin="0, 40, 0, 0"
+                Text="TEMPERATURE" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"
+                WidthRequest="120"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_Temperature" Grid.Row="5" Grid.Column="1" Margin="0, 40, 0, 0"/>
+
+            <Picker x:Name="Picker_Temperature_Precision"
+                    Title=""
+                    Grid.Column="5" 
+                    Grid.Row="5"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_Temperature_Precision_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Floating Point 32-bit</x:String>
+                        <x:String>Floating Point 64-bit</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker x:Name="Picker_Temperature_Frequency"
+                    Title=""
+                    Grid.Column="6" 
+                    Grid.Row="5"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_Temperature_Frequency_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>1 Hz</x:String>
+                        <x:String>50 Hz</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <!--#endregion-->
+
+
+            <!--#region PRESSURE-->
+            <Label 
+                Grid.Column="0"
+                Grid.Row="6"   
+                Grid.RowSpan="1"
+                Margin="0, 40, 0, 0"
+                Text="PRESSURE" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"
+                WidthRequest="120"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+
+            <MauiLib_CustomControls:CheckBoxExt x:Name="CheckBoxExt_Pressure" Grid.Row="6" Grid.Column="1" Margin="0, 40, 0, 0"/>
+
+            <Picker x:Name="Picker_Pressure_Precision"
+                    Title=""
+                    Grid.Column="5" 
+                    Grid.Row="6"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_Pressure_Precision_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Floating Point 32-bit</x:String>
+                        <x:String>Floating Point 64-bit</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker x:Name="Picker_Pressure_Frequency"
+                    Title=""
+                    Grid.Column="6" 
+                    Grid.Row="6"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_Pressure_Frequency_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>1 Hz</x:String>
+                        <x:String>50 Hz</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <!--#endregion-->
+
+
+            <!--#region FILTER SETTINGS-->
+            <Label 
+                Grid.Column="0"
+                Grid.Row="7"   
+                Grid.RowSpan="1"
+                Margin="0, 40, 0, 0"
+                Text="FILTER SETTINGS" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"
+                WidthRequest="120"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+
+            <Picker x:Name="Picker_FilterSettings"
+                    Title=""
+                    Grid.Column="1" 
+                    Grid.Row="7"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_FilterSettings_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>11.3 General</x:String>
+                        <x:String>12.3 General No Baro</x:String>
+                        <x:String>13.2 General Mag</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <!--#endregion-->
+
+
+            <!--#region COORDINATE FRAME-->
+            <Label 
+                Grid.Column="3"
+                Grid.Row="7"   
+                Grid.RowSpan="1"
+                Margin="0, 40, 0, 0"
+                Text="COORDINATE FRAME" 
+                HorizontalOptions="Start"
+                BackgroundColor="Silver"
+                WidthRequest="120"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+
+            <Picker x:Name="Picker_CoordinateFrame"
+                    Title=""
+                    Grid.Column="4" 
+                    Grid.Row="7"
+                    Margin="0, 40, 0, 0"
+                    SelectedIndexChanged="Picker_CoordinateFrame_SelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>NED</x:String>
+                        <x:String>NWU</x:String>
+                        <x:String>ENU</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <!--#endregion-->
+            
+            
+            <Button 
+                x:Name="ButtonDebug" 
+                Grid.Row="8" 
+                Grid.Column="2" 
+                Grid.ColumnSpan="3" 
+                Margin="0, 40, 0, 0" 
+                Text="DEBUG"
+                Clicked="ButtonDebug_Clicked"/>
+
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

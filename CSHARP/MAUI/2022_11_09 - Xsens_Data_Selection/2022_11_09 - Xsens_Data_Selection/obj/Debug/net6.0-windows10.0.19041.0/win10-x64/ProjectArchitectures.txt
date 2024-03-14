@@ -1,0 +1,1 @@
+C:\Users\gscalera\Desktop\REMOT\SOFTWARE_DEVELOPMENT\CSHARP\MAUI\2022_11_09 - Xsens_Data_Selection\2022_11_09 - Xsens_Data_Selection\2022_11_09 - Xsens_Data_Selection.csproj;x64

@@ -1,0 +1,8 @@
+﻿<maui:MauiWinUIApplication
+    x:Class="_2022_11_09___Xsens_Data_Selection.WinUI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:maui="using:Microsoft.Maui"
+    xmlns:local="using:_2022_11_09___Xsens_Data_Selection.WinUI">
+
+</maui:MauiWinUIApplication>
