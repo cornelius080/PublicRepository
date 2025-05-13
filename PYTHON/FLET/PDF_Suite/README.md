@@ -2,7 +2,7 @@
 
 A simple app for displaying PDF pages and navigate across them. The app allows to search a keyword across the PDF document and to extract pages from the original doc. Finally, it performs object character recognition (OCR) converting a scanned PDF into a PDF.
 
-![Screenshot of the app](assets\App_Screenshot.png)
+![Screenshot of the app](assets/App_Screenshot.png)
 
 UI is organized into two sections: the left one contains widgets and controls, the right section is only intended for displaying PDF pages. 
 
