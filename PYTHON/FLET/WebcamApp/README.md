@@ -2,7 +2,7 @@
 
 The WebcamApp is a *Flet* application that utilizes the `WebcamManager` class to provide a user interface for capturing images and recording video from a webcam.
 
-![Screenshot of the app](assets\App_Screenshot.png)
+![Screenshot of the app](assets/App_Screenshot.png)
 
 ## Features
 - Displays a live feed from the webcam

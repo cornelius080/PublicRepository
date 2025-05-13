@@ -2,7 +2,7 @@
 
 A simple web-video player developed with Flet. The app allows to add one or more web URL corresponding to web video (such as Youtube videos) and, optionally, to assign a name to them. Once the playlist is completed, a video player is shown and the videos are shown according to some basic settings.
 
-![Screenshot of the app](assets\App_Screenshot.png)
+![Screenshot of the app](assets/App_Screenshot.png)
 
 ## Add new video
 

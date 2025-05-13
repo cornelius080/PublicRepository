@@ -2,7 +2,7 @@
 
 A simple video player developed with Flet. The app allows to select one or more video files and to play the video. Moreover, the user can modify some basic settings.
 
-![Screenshot of the app](assets\App_Screenshot.png)
+![Screenshot of the app](assets/App_Screenshot.png)
 
 In the left part of the UI, user can open a file dialog for video selection, for video playing and for general settings.
 
