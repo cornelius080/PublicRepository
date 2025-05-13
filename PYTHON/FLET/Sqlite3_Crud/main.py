@@ -66,6 +66,7 @@ def main(page: ft.Page):
                 ),
             ),
         )
+    page.overlay.extend([bottom_sheet])
     
     pick_files_dialog = ft.FilePicker(on_result=pick_files_result)
 
@@ -130,7 +131,7 @@ def main(page: ft.Page):
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         )        
     )
-    page.overlay.extend([bottom_sheet])
+
     global selected_file
     selected_file = None
 

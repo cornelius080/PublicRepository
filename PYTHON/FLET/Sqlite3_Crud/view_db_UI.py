@@ -2,7 +2,7 @@ import flet as ft
 from database_manager import DbManager
 
 
-class DB_Column_Container(ft.UserControl):
+class DB_Column_Container(ft.Control):
     def __init__(self, field_info: dict, button: ft.ElevatedButton = None):
         """
         Constructor for the DB_Column_Container class.
@@ -61,7 +61,7 @@ class DB_Column_Container(ft.UserControl):
         Also changes the icon of the expand button to an up arrow.
         """
         self.__visible_column.visible = True
-        self.__expand_button.icon = ft.icons.ARROW_DROP_UP
+        self.__expand_button.icon = ft.Icons.ARROW_DROP_UP
         self.update()
 
     def collapse_container(self):
@@ -69,7 +69,7 @@ class DB_Column_Container(ft.UserControl):
         Also changes the icon of the expand button to a down arrow.
         """
         self.__visible_column.visible = False
-        self.__expand_button.icon = ft.icons.ARROW_DROP_DOWN
+        self.__expand_button.icon = ft.Icons.ARROW_DROP_DOWN
         self.update()
 
     def expand_button_on_click(self, e):
@@ -106,15 +106,15 @@ class DB_Column_Container(ft.UserControl):
         :return: A Flet Container object encapsulating the column's UI elements.
         """
         self.__expand_button = ft.IconButton(
-            ft.icons.ARROW_DROP_DOWN,
-            icon_color=ft.colors.WHITE,
+            ft.Icons.ARROW_DROP_DOWN,
+            icon_color=ft.Colors.WHITE,
             on_click = self.expand_button_on_click,
         )
         
         self.__nullable_checkbox = ft.Checkbox(label="Nullable", value=self.field_info["nullable"], disabled=True,)
         
         self.__text_field = ft.TextField(
-            label="New Value", height=40, border_color = ft.colors.BLUE_500,
+            label="New Value", height=40, border_color = ft.Colors.BLUE_500,
             on_change=self.textfield_on_change,
         )        
 
@@ -145,15 +145,15 @@ class DB_Column_Container(ft.UserControl):
         
         return ft.Container(
             width=300,
-            border=ft.border.all(1, ft.colors.BLUE_500),
+            border=ft.border.all(1, ft.Colors.BLUE_500),
             content=ft.Column(
                 [
                     ft.Container(
                         padding=ft.padding.only(left=5, right=0, top=0, bottom=0),
-                        bgcolor=ft.colors.BLUE_500,
+                        bgcolor=ft.Colors.BLUE_500,
                         content=ft.Row(
                             [
-                                ft.Text(self.field_info["name"], style=ft.TextStyle(color=ft.colors.WHITE)),
+                                ft.Text(self.field_info["name"], style=ft.TextStyle(color=ft.Colors.WHITE)),
                                 self.__expand_button,
                             ],
                             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
@@ -166,7 +166,7 @@ class DB_Column_Container(ft.UserControl):
         )
 
 
-class Update_Record_Dialog(ft.UserControl):
+class Update_Record_Dialog(ft.Control):
     def __init__(self, table_name: str, row_index: int, columns: list, on_update_callback):
         """
         Creates an Update_Record_Dialog.
@@ -205,9 +205,9 @@ class Update_Record_Dialog(ft.UserControl):
             textfield = row.controls[2]
             if not checkbox.value and textfield.value == "":
                 isCompleted = False   
-                textfield.border_color = ft.colors.RED   
+                textfield.border_color = ft.Colors.RED   
             elif not checkbox.value and not textfield.value == "":
-                textfield.border_color = ft.colors.WHITE 
+                textfield.border_color = ft.Colors.WHITE 
             textfield.update()  
 
         return isCompleted
@@ -280,9 +280,9 @@ class Update_Record_Dialog(ft.UserControl):
             self.rows.append(
                 ft.Row(
                     [
-                        ft.Text(value=column["name"], style=ft.TextStyle(color=ft.colors.WHITE), overflow=ft.TextOverflow.ELLIPSIS, width = 300,),
+                        ft.Text(value=column["name"], style=ft.TextStyle(color=ft.Colors.WHITE), overflow=ft.TextOverflow.ELLIPSIS, width = 300,),
                         ft.Checkbox(label="NULL", value=column["nullable"], disabled=True, width=100,),
-                        ft.TextField(label=column["type"], border_color = ft.colors.WHITE, height=40, width=350, ),
+                        ft.TextField(label=column["type"], border_color = ft.Colors.WHITE, height=40, width=350, ),
                     ],
                     alignment=ft.MainAxisAlignment.START,
                 )
@@ -290,15 +290,15 @@ class Update_Record_Dialog(ft.UserControl):
         self.rows.extend(
             [
                 ft.Container(height=40), 
-                ft.ElevatedButton("Update Record", bgcolor=ft.colors.WHITE, color=ft.colors.BLUE_500, on_click=self.update_record,),
+                ft.ElevatedButton("Update Record", bgcolor=ft.Colors.WHITE, color=ft.Colors.BLUE_500, on_click=self.update_record,),
             ]
         )
 
         
         return ft.AlertDialog(
             open=True,
-            bgcolor=ft.colors.BLUE_500,
-            title=ft.Text(f"Updating values of {self.table_name} record #{self.row_index}", style=ft.TextStyle(color=ft.colors.WHITE), text_align="center",),
+            bgcolor=ft.Colors.BLUE_500,
+            title=ft.Text(f"Updating values of {self.table_name} record #{self.row_index}", style=ft.TextStyle(color=ft.Colors.WHITE), text_align="center",),
             content=ft.Container(
                 width=800,
                 content=ft.Column(
@@ -310,7 +310,7 @@ class Update_Record_Dialog(ft.UserControl):
         )
 
 
-class View_Db_UI(ft.UserControl):
+class View_Db_UI(ft.Control):
     def __init__(self, db_name: str):
         """
         Constructor for the View_Db_UI class.
@@ -331,10 +331,10 @@ class View_Db_UI(ft.UserControl):
         """        
         self.columns_specs_layout.visible = not self.columns_specs_layout.visible
 
-        if e.control.icon == ft.icons.ARROW_DROP_DOWN: 
-            e.control.icon = ft.icons.ARROW_DROP_UP
+        if e.control.icon == ft.Icons.ARROW_DROP_DOWN: 
+            e.control.icon = ft.Icons.ARROW_DROP_UP
         else:
-            e.control.icon = ft.icons.ARROW_DROP_DOWN
+            e.control.icon = ft.Icons.ARROW_DROP_DOWN
 
         self.update()
 
@@ -353,10 +353,10 @@ class View_Db_UI(ft.UserControl):
         for column_container in self.db_columns_container:
             if not column_container.isNullable() and column_container.textfield_isEmpty():
                 isCompleted = False
-                column_container.set_textfield_border_color(ft.colors.RED)
+                column_container.set_textfield_border_color(ft.Colors.RED)
                 column_container.expand_container()
             elif not column_container.isNullable() and not column_container.textfield_isEmpty():
-                column_container.set_textfield_border_color(ft.colors.BLUE_500)                
+                column_container.set_textfield_border_color(ft.Colors.BLUE_500)                
 
         return isCompleted
     
@@ -578,8 +578,8 @@ class View_Db_UI(ft.UserControl):
                 ft.DataRow([ft.DataCell(ft.Text(str(elem))) for elem in row])
                 for row in table_content
             ],
-            horizontal_lines=ft.BorderSide(width=1, color=ft.colors.BLUE_500),
-            heading_row_color=ft.colors.BLUE_500,
+            horizontal_lines=ft.BorderSide(width=1, color=ft.Colors.BLUE_500),
+            heading_row_color=ft.Colors.BLUE_500,
         )
 
         # add a column with the edit and delete buttons
@@ -590,11 +590,11 @@ class View_Db_UI(ft.UserControl):
                     ft.Row(
                         [
                             ft.IconButton(
-                                icon=ft.icons.EDIT, tooltip="Edit Record",
+                                icon=ft.Icons.EDIT, tooltip="Edit Record",
                                 on_click=lambda e, row_index=i: self.edit_record_on_click(e, row_index+1),
                             ),
                             ft.IconButton(
-                                icon=ft.icons.DELETE, tooltip="Delete Record",
+                                icon=ft.Icons.DELETE, tooltip="Delete Record",
                                 on_click=lambda e, row_index=i: self.delete_record_on_click(e, row_index+1),
                             ),                        
                         ]
@@ -631,11 +631,11 @@ class View_Db_UI(ft.UserControl):
            
             self.columns_specs_layout = ft.Column(
                 [
-                    ft.Divider(color=ft.colors.BLUE_500),
+                    ft.Divider(color=ft.Colors.BLUE_500),
                     ft.Row(controls=self.db_columns_container, wrap=True),
                     ft.Row(
                         [
-                            ft.ElevatedButton("Add New Record",bgcolor=ft.colors.BLUE, color=ft.colors.WHITE, on_click=self.add_new_rec_on_click),
+                            ft.ElevatedButton("Add New Record",bgcolor=ft.Colors.BLUE, color=ft.Colors.WHITE, on_click=self.add_new_rec_on_click),
                         ], 
                         alignment=ft.MainAxisAlignment.END,
                     ),                      
@@ -648,12 +648,12 @@ class View_Db_UI(ft.UserControl):
                 controls=[
                     ft.Container(
                         padding=5,
-                        border=ft.border.all(1, ft.colors.BLUE_500),  
+                        border=ft.border.all(1, ft.Colors.BLUE_500),  
                         content=ft.Column(
                             [
                                 ft.Container(
                                     gradient=ft.LinearGradient(
-                                        colors=[ft.colors.BLUE_500,  ft.colors.WHITE],
+                                        Colors=[ft.Colors.BLUE_500,  ft.Colors.WHITE],
                                         begin=ft.Alignment(-1, -1), 
                                         end=ft.Alignment(0.3, 1),
                                     ),
@@ -661,10 +661,10 @@ class View_Db_UI(ft.UserControl):
                                         [
                                             ft.Row(
                                                     [
-                                                        ft.Text(self.db_name, size=14, weight="bold", color=ft.colors.BLACK),
+                                                        ft.Text(self.db_name, size=14, weight="bold", color=ft.Colors.BLACK),
                                                         ft.TextField(
-                                                            label="Search Value", prefix_icon=ft.icons.SEARCH,  
-                                                            border_color = ft.colors.BLUE_500, height=40, 
+                                                            label="Search Value", prefix_icon=ft.Icons.SEARCH,  
+                                                            border_color = ft.Colors.BLUE_500, height=40, 
                                                             on_change = self.tf_search_value_on_change,
                                                         ),
                                                     ],
@@ -672,14 +672,14 @@ class View_Db_UI(ft.UserControl):
                                             ),
                                             ft.Row(
                                                 [
-                                                    ft.IconButton(ft.icons.ARROW_DROP_DOWN, icon_color=ft.colors.WHITE, icon_size=40,tooltip="More details", on_click=self.show_tables_specs_layout),
+                                                    ft.IconButton(ft.Icons.ARROW_DROP_DOWN, icon_color=ft.Colors.WHITE, icon_size=40,tooltip="More details", on_click=self.show_tables_specs_layout),
                                                     ft.Dropdown(
                                                         height=40,
                                                         content_padding=8,
-                                                        prefix_icon=ft.icons.TABLE_VIEW, 
+                                                        prefix_icon=ft.Icons.TABLE_VIEW, 
                                                         label="Select Table", 
                                                         value = self.db_structure[0]["name"],  
-                                                        border_color = ft.colors.BLUE_500,
+                                                        border_color = ft.Colors.BLUE_500,
                                                         options=[ft.dropdown.Option(table["name"]) for table in self.db_structure],
                                                         on_change = self.dd_table_on_change,
                                                     ),
@@ -697,7 +697,7 @@ class View_Db_UI(ft.UserControl):
                     ),
 
                     ft.Container(
-                        border=ft.border.all(1, ft.colors.BLUE_500),  
+                        border=ft.border.all(1, ft.Colors.BLUE_500),  
                         padding = 5,
                         content=ft.Column(
                             [

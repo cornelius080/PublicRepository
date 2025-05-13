@@ -1,7 +1,8 @@
 import flet as ft
 from database_manager import DbManager
 
-class Create_New_Db_UI(ft.UserControl):
+#class Create_New_Db_UI(ft.UserControl):
+class Create_New_Db_UI(ft.Control):
     def __init__(self,):
         """
         Constructor for the Create_New_Db_UI class.
@@ -24,13 +25,13 @@ class Create_New_Db_UI(ft.UserControl):
         :return: True if all the required specifications are defined, False otherwise.
         """
         if self.tf_db_name.value == "": # database name
-            self.snackbar.content = ft.Text(f"Database Name not defined!", color=ft.colors.RED)
+            self.snackbar.content = ft.Text(f"Database Name not defined!", color=ft.Colors.RED)
             self.snackbar.open = True        
             self.snackbar.update()
             return False
         for i, tab in enumerate(self.table_tabs.tabs): # table name
             if tab.content.controls[1].controls[0].value == "": 
-                self.snackbar.content = ft.Text(f"Table {i+1} Name not defined!", color=ft.colors.RED)
+                self.snackbar.content = ft.Text(f"Table {i+1} Name not defined!", color=ft.Colors.RED)
                 self.snackbar.open = True        
                 self.snackbar.update()
                 return False
@@ -38,12 +39,12 @@ class Create_New_Db_UI(ft.UserControl):
             for j, container in enumerate(list_view.controls):
                 col = container.content
                 if col.controls[1].controls[0].value == "": 
-                    self.snackbar.content = ft.Text(f"Table {i+1} - Field {j+1} Name not defined!", color=ft.colors.RED)
+                    self.snackbar.content = ft.Text(f"Table {i+1} - Field {j+1} Name not defined!", color=ft.Colors.RED)
                     self.snackbar.open = True        
                     self.snackbar.update()
                     return False
                 if col.controls[1].controls[1].value == None: 
-                    self.snackbar.content = ft.Text(f"Table {i+1} - Field {j+1} DataType not defined!", color=ft.colors.RED)
+                    self.snackbar.content = ft.Text(f"Table {i+1} - Field {j+1} DataType not defined!", color=ft.Colors.RED)
                     self.snackbar.open = True        
                     self.snackbar.update()
                     return False
@@ -158,7 +159,7 @@ class Create_New_Db_UI(ft.UserControl):
         for j in range(int(e.control.value)):
             list_view.controls.append(  
                 ft.Container(
-                    border=ft.border.all(1, ft.colors.BLUE_500),
+                    border=ft.border.all(1, ft.Colors.BLUE_500),
                     border_radius=10,
                     margin=0,
                     padding=20,
@@ -167,9 +168,9 @@ class Create_New_Db_UI(ft.UserControl):
                             ft.Text(f"Field {j+1}", italic = True, size=16, weight=ft.FontWeight.BOLD),
                             ft.Row(
                                 [
-                                    ft.TextField(label="Field Name", expand=True, height=40,border_color = ft.colors.BLUE_500, tooltip="Name of the column"),
+                                    ft.TextField(label="Field Name", expand=True, height=40,border_color = ft.Colors.BLUE_500, tooltip="Name of the column"),
                                     ft.Dropdown(
-                                        border_color = ft.colors.BLUE_500,
+                                        border_color = ft.Colors.BLUE_500,
                                         content_padding = 8,
                                         width= 150,
                                         height=40,
@@ -188,12 +189,12 @@ class Create_New_Db_UI(ft.UserControl):
                                         label="Nullable", label_style=ft.TextStyle(size=16), data=[i,j],
                                         tooltip="If TRUE, the column can contain NULL values, i.e. absent or unknown. It is not mandatory to provide a value for that column.",
                                         track_color={
-                                            ft.MaterialState.DEFAULT: ft.colors.BLUE_50,
-                                            ft.MaterialState.SELECTED: ft.colors.BLUE_500,
+                                            ft.MaterialState.DEFAULT: ft.Colors.BLUE_50,
+                                            ft.MaterialState.SELECTED: ft.Colors.BLUE_500,
                                         },
                                         thumb_color={
-                                            ft.MaterialState.DEFAULT: ft.colors.BLUE_500,
-                                            ft.MaterialState.SELECTED: ft.colors.BLUE_50,
+                                            ft.MaterialState.DEFAULT: ft.Colors.BLUE_500,
+                                            ft.MaterialState.SELECTED: ft.Colors.BLUE_50,
                                         },
                                         value=True,
                                         on_change=self.switch_field_attributes_on_change,
@@ -202,12 +203,12 @@ class Create_New_Db_UI(ft.UserControl):
                                         label="Unique", label_style=ft.TextStyle(size=16), data=[i,j],
                                         tooltip="If TRUE, the column values are unique, that is, no duplicates are allowed (e.g., phone numbers or emails); if TRUE can contain ONLY ONE NULL value. NULL and PRIMARY_KEY are switched to FALSE.",
                                         track_color={
-                                            ft.MaterialState.DEFAULT: ft.colors.BLUE_50,
-                                            ft.MaterialState.SELECTED: ft.colors.BLUE_500,
+                                            ft.MaterialState.DEFAULT: ft.Colors.BLUE_50,
+                                            ft.MaterialState.SELECTED: ft.Colors.BLUE_500,
                                         },
                                         thumb_color={
-                                            ft.MaterialState.DEFAULT: ft.colors.BLUE_500,
-                                            ft.MaterialState.SELECTED: ft.colors.BLUE_50,
+                                            ft.MaterialState.DEFAULT: ft.Colors.BLUE_500,
+                                            ft.MaterialState.SELECTED: ft.Colors.BLUE_50,
                                         },
                                         on_change=self.switch_field_attributes_on_change,
                                     ), 
@@ -215,12 +216,12 @@ class Create_New_Db_UI(ft.UserControl):
                                         label="Primary Key", label_style=ft.TextStyle(size=16), data=[i,j],
                                         tooltip = "If TRUE, the column values must be unique and not NULL (e.g., a progressive integer);  if PRIMARY_KEY is set to TRUE, NULL and UNIQUE are switched to FALSE, considering that a UNIQUE column admits even a single NULL value.",
                                         track_color={
-                                            ft.MaterialState.DEFAULT: ft.colors.BLUE_50,
-                                            ft.MaterialState.SELECTED: ft.colors.BLUE_500,
+                                            ft.MaterialState.DEFAULT: ft.Colors.BLUE_50,
+                                            ft.MaterialState.SELECTED: ft.Colors.BLUE_500,
                                         },
                                         thumb_color={
-                                            ft.MaterialState.DEFAULT: ft.colors.BLUE_500,
-                                            ft.MaterialState.SELECTED: ft.colors.BLUE_50,
+                                            ft.MaterialState.DEFAULT: ft.Colors.BLUE_500,
+                                            ft.MaterialState.SELECTED: ft.Colors.BLUE_50,
                                         },
                                         on_change=self.switch_field_attributes_on_change,
                                     ),
@@ -249,15 +250,15 @@ class Create_New_Db_UI(ft.UserControl):
         for i in range(int(e.control.value)):
             self.table_tabs.tabs.append(
                 ft.Tab(
-                    icon= ft.icons.TABLE_VIEW, text=f"Table {i+1}", 
+                    icon= ft.Icons.TABLE_VIEW, text=f"Table {i+1}", 
                     content = ft.Column(
                         spacing=5,
                         controls=[
                             ft.Container(height=1),
                             ft.Row(
                                 [
-                                    ft.TextField(label="Table Name", expand=True, height=40, border_color = ft.colors.BLUE_500),
-                                    ft.TextField(label="Number of Fields", width=150, height=40, border_color=ft.colors.BLUE_500, keyboard_type=ft.KeyboardType.NUMBER, on_submit=lambda e, i=i: self.design_tables_specs_layout(e,i),),              
+                                    ft.TextField(label="Table Name", expand=True, height=40, border_color = ft.Colors.BLUE_500),
+                                    ft.TextField(label="Number of Fields", width=150, height=40, border_color=ft.Colors.BLUE_500, keyboard_type=ft.KeyboardType.NUMBER, on_submit=lambda e, i=i: self.design_tables_specs_layout(e,i),),              
                                 ],
                             ),
                             ft.Container(
@@ -301,10 +302,10 @@ class Create_New_Db_UI(ft.UserControl):
 
         save_file_dialog = ft.FilePicker(on_result=self.save_file_result)
 
-        self.tf_db_name = ft.TextField(label="Database Name", read_only=True, expand=True, height=40,border_color = ft.colors.BLUE_500)   
-        self.table_tabs = ft.Tabs(selected_index=0, animation_duration=10, divider_color=ft.colors.BLUE_500, unselected_label_color=ft.colors.BLUE_500, tabs=[],)
+        self.tf_db_name = ft.TextField(label="Database Name", read_only=True, expand=True, height=40,border_color = ft.Colors.BLUE_500)   
+        self.table_tabs = ft.Tabs(selected_index=0, animation_duration=10, divider_color=ft.Colors.BLUE_500, unselected_label_color=ft.Colors.BLUE_500, tabs=[],)
         self.button_create_db = ft.ElevatedButton(
-            "CREATE DB", bgcolor=ft.colors.BLUE, color=ft.colors.WHITE, 
+            "CREATE DB", bgcolor=ft.Colors.BLUE, color=ft.Colors.WHITE, 
             visible=False, on_click=self.create_database, 
         )
 
@@ -313,13 +314,13 @@ class Create_New_Db_UI(ft.UserControl):
                 ft.Row(
                     [
                         ft.ElevatedButton(
-                            "SAVE WITH NAME", bgcolor=ft.colors.BLUE, color=ft.colors.WHITE,
+                            "SAVE WITH NAME", bgcolor=ft.Colors.BLUE, color=ft.Colors.WHITE,
                             on_click=lambda _: save_file_dialog.save_file(
                                 dialog_title="Save Database with Name", 
                             ),
                         ),
                         self.tf_db_name,
-                        ft.TextField(label="Number of Tables", width=150, height=40, border_color=ft.colors.BLUE_500, keyboard_type=ft.KeyboardType.NUMBER, visible=False, on_submit=self.design_tabs_layout,),              
+                        ft.TextField(label="Number of Tables", width=150, height=40, border_color=ft.Colors.BLUE_500, keyboard_type=ft.KeyboardType.NUMBER, visible=False, on_submit=self.design_tabs_layout,),              
                     ],
                 ),
                 ft.Container(alignment=ft.alignment.center, height = 530, 
