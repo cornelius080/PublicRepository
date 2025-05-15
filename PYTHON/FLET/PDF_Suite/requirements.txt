@@ -1,1 +1,15 @@
-flet
+flet                      0.21.2
+flet-core                 0.21.2
+flet-runtime              0.21.2
+numpy                     1.26.2
+numpy-base                1.26.2
+pdf2image                 1.17.0
+pypdf                     4.3.0
+ocrmypdf                  16.4.1
+python                    3.11.5
+python-dateutil           2.8.2 
+python-dotenv             1.0.1 
+python-fastjsonschema     2.16.2
+python-json-logger        2.0.7 
+python-slugify            8.0.4 
+python-tzdata             2023.3
